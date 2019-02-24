@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="sass/app.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+
+    <div class="bodymove">
+        <header>
+            <!--HEADER-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div>
+                        <div class="topHeader">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <span>Fountain</span>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                                <span style="font-size:30px;cursor:pointer" class="opennav" onclick="openNav()">&#9776;</span>
+                                <div id="myNav" class="overlay">
+
+                                    <div class="overlay-content">
+                                        <a href="javascript:void(0)" onclick="closeNav()">&times;</a>
+                                        <a href="#about" class="scrolla">About</a>
+                                        <a href="#menu" class="scrolla">Menu</a>
+                                        <a href="#reservations" class="scrolla">reservations</a>
+                                        <a href="#openTime" class="scrolla">Open time</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid topHeaderImg">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="HeaderimageBox">
+                            <img src="images/Headerimage.png" alt="placeholder+image" style="width:100%;" class="img-responsive">
+                            <div class="textcentered">
+                                <h1><small>Our food</small> restores,<br /> replenishes, <small>and</small> revives.</h1>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <script>
+            $(document).ready(function() {
+                $("a.scrolla").on('click', function(event) {
+                    // hide menu
+                    closeNav();
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+
+                            scrollTop: $(hash).offset().top
+                        }, 800, function() {
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+
+                //Check to see if the window is top if not then display button
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > 100) {
+                        $('.scrollToTop').fadeIn();
+                    } else {
+                        $('.scrollToTop').fadeOut();
+                    }
+                });
+
+                //Click event to scroll to top
+                $('.scrollToTop').click(function() {
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 800);
+                    return false;
+                });
+            });
+        </script>
+
+
+
+        <section class="ImgBox" id="about">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 insideBoxImg">
+                        <img src="images/Layer1.png" alt="placeholder+image" style="height:100%;" class="img-responsive">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 insideBoxText">
+                        <h2>About</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>
+                        <p><b>sunt in culpa qui </b>officia deserunt mollit anim id est laborum</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ImgBox">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-push-6 col-lg-push-6 insideBoxImg">
+                        <img src="images/Layer6.png" alt="placeholder+image" style="height:100%;" class="img-responsive">
+                    </div>
+
+                    <div class="col-lg-6 col-xs-12 col-md-6 col-sm-12 col-md-pull-6 col-lg-pull-6 insideBoxText">
+                        <h2>Why Organic ?!</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>
+                        <p><b>sunt in culpa qui </b>officia deserunt mollit anim id est laborum</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ImgBox">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 insideBoxImg">
+                        <img src="images/Layer5.png" alt="placeholder+image" style="height:100%;" class="img-responsive">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 insideBoxText">
+                        <h2>Traditional</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>
+                        <p><b>sunt in culpa qui </b>officia deserunt mollit anim id est laborum</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="imageText">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imageTextimg">
+                        <img src="images/Layer10.png" alt="placeholder+image" style="height:100%;" class="img-responsive">
+                        <div class="top-right">
+                            <h3>Our menu rotates</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu" id="menu">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="menuHeaderText">
+                            <h3>Menu</h3>
+                            <p>Our menu rotates within the season.</p>
+                            <p>Here is a list of dishes you may see this week</p>
+                            <hr width="10%" size="35">
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="insideMenu">
+                            <dl class="dl-horizontal">
+                                <dt>Description lists</dt>
+                                <dd>
+                                    A description list is perfect for defining terms.
+                                </dd>
+                                <dt>
+                                Euismod
+                            </dt>
+                                <dd>
+                                    Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+                                </dd>
+                                <dd>
+                                    Donec id elit non mi porta gravida at eget metus.
+                                </dd>
+                                <dt>
+                                Malesuada porta
+                            </dt>
+                                <dd>
+                                    Etiam porta sem malesuada magna mollis euismod.
+                                </dd>
+                                <dt>
+                             Felis euismod semper eget lacinia
+                            </dt>
+                                <dd>
+                                    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 stars">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="insideMenu">
+                            <dl class="dl-horizontal">
+                                <dt>Description lists</dt>
+                                <dd>
+                                    A description list is perfect for defining terms.
+                                </dd>
+                                <dt>
+                                Euismod
+                            </dt>
+                                <dd>
+                                    Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+                                </dd>
+                                <dd>
+                                    Donec id elit non mi porta gravida at eget metus.
+                                </dd>
+                                <dt>
+                                Malesuada porta
+                            </dt>
+                                <dd>
+                                    Etiam porta sem malesuada magna mollis euismod.
+                                </dd>
+                                <dt>
+                             Felis euismod semper eget lacinia
+                            </dt>
+                                <dd>
+                                    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 stars">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="insideMenu">
+                            <dl class="dl-horizontal">
+                                <dt>Description lists</dt>
+                                <dd>
+                                    A description list is perfect for defining terms.
+                                </dd>
+                                <dt>
+                                Euismod
+                            </dt>
+                                <dd>
+                                    Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+                                </dd>
+                                <dd>
+                                    Donec id elit non mi porta gravida at eget metus.
+                                </dd>
+                                <dt>
+                                Malesuada porta
+                            </dt>
+                                <dd>
+                                    Etiam porta sem malesuada magna mollis euismod.
+                                </dd>
+                                <dt>
+                             Felis euismod semper eget lacinia
+                            </dt>
+                                <dd>
+                                    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                </dd>
+                            </dl>
+                            <hr width="10%" size="35">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="imageText">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imageTextimg">
+                        <img src="images/Layer11.png" alt="placeholder+image" style="height:100%;" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="reservations" id="reservations">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h4>Reservations</h4>
+                        <p>We`d love for you to dine with us. Reservations up to 30 days in advance.</p>
+                        <a href="#" class="reservationsLink">Book a table</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="imageText">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imageTextimg">
+                        <img src="images/tea.png" alt="placeholder+image" style="height:100%;" class="img-responsive">
+                        <div class="top-right">
+                            <h3>Our menu rotates</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="openTime" id="openTime">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h4>Dine with us</h4>
+                        <hr width="10%" size="35">
+                        <h5>m-tu</h5>
+                        <h6>Closed</h6>
+                        <h5>w-th</h5>
+                        <h6>6:00 - 10:00 PM</h6>
+                        <h5>F-Su</h5>
+                        <h6>5:30 - 10:00 PM</h6>
+                        <hr width="10%" size="35">
+                        <div class="adress">
+                            <span>Street N.N.</span><br/>
+                            <span>Montenegro</span><br/>
+                            <span>(+382) 55 555 555</span>
+                            <span>info@fountanrestaurant.me</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="newsletter" id="contact">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
+                        <p>Join Us for special event announcements</p>
+                        <p>and behind-the-scenes stories.</p>
+                        <form class="register-newsletter" role="form">
+                            <input type="text" name="newsletter" required="" placeholder="Wpisz swój adres email">
+                            <input type="submit" class="btn btn-lg" value="WYŚLIJ">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <a href="#" class="scrollToTop"></a>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    &copy; Fountan Restaurant
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <span>cut by <img src="images/CutByMK.png" alt="CutByMK"></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
